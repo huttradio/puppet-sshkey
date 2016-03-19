@@ -46,7 +46,7 @@ class sshkey::puppetmaster::dir
 (
   $ensure = 'present',
   $owner  = 'puppet',
-  $group  = 'puppet,
+  $group  = 'puppet',
   $mode   = '0400',
 
   $dir = $::sshkey::params::dir,
