@@ -111,11 +111,12 @@ define sshkey::keypair
   {
     file
     { $_target_private_file:
-      ensure  => $file_ensure,
-      content => file($_private_file),
-      owner   => $_owner,
-      group   => $_group,
-      mode    => $target_private_file_mode,
+      ensure    => $file_ensure,
+      content   => file($_private_file),
+      show_diff => false,
+      owner     => $_owner,
+      group     => $_group,
+      mode      => $target_private_file_mode,
     }
   }
 }
