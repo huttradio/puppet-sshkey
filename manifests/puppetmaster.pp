@@ -90,7 +90,7 @@ define sshkey::puppetmaster
   {
     exec
     { "::sshkey::puppetmaster::generate::${name}":
-      command => "${_ssh_keygen} -t ${type} -b ${bits} -C ${comment} -f ${_private_file}",
+      command => "${_ssh_keygen} -t ${type} -b ${_bits} -C ${comment} -f ${_private_file}",
       onlyif  => "${_test} ! -f ${_public_file} -o ! -f ${_private_file}",
     }
 
